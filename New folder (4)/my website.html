@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        .test{
+            color:white;
+            font-size: larger;
+            text-transform: uppercase;
+}
+ul{ margin: 0px;
+    padding: 0px;
+}
+body{ 
+    background-color:rgb(11, 5, 15);
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    color:white;
+    position: absolute;
+    width: 95%;
+    z-index: 10;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+header ul li{
+    margin-right: 30px;
+}
+header ul li a{
+    padding: 6px 15px;
+    border-radius: 60px;
+}
+header ul li a:hover{
+    background: #fff;
+    color:rgb(201, 16, 77);
+}
+.main{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main::after{
+    content: '' ;
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(to top 19, 11, 24,transparent) ;
+}
+.main img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+#moon{
+    mix-blend-mode: screen;
+    transform: translateY(80px);
+}
+.khaled{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    transform: translateY(-140px);
+
+}
+.parag{
+    color: #fff;
+    padding: 25px;
+    margin: 20px;
+}
+.who:first-letter{
+    color: red;
+    font-size: xx-large;
+    font-family: cursive;
+}
+.language::first-letter{
+    color: red;
+    font-size: xx-large;
+    font-family: cursive ;
+}
+.rr:first-letter{
+    color: red;
+    font-size: xx-large;
+    font-family: cursive;
+}
+.mycv{
+    color: rgb(46, 126, 126);
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.insta{
+    text-decoration: none;
+    color: #fff;
+}
+.fb{
+    text-decoration: none;
+    color: #fff;
+}
+.contact{
+    color: #fff;
+    text-decoration: none;
+}
+    </style> 
+    <meta thhp-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <header>
+<div class="test">Khaled frayji</div>
+<ul><li><a href="https://www.instagram.com/khaled.frayji/ " class="insta">instagram</a></li>
+<li><a href="https://www.facebook.com/stay.plation123/" class="fb">Facebook</a></li>
+<li><a href="mailto:khaledfrayji007@gmail.com" class=" contact">Email</a></li>
+<li><a href="tel: +961 71 287 553" class="contact">Phone</a></li>
+</ul>
+</header>
+<section class="main">
+    <img src="stars1.webp"  id="stars">
+    <h2 class="khaled">Welcome!</h2>
+    <img src="moon2.webp" id="moon">
+    <img src="mountains3.webp" id="m3">
+    <img src="mountains4.webp" id="m4">
+    <img src="river5.webp" id="riv">
+    <img src="boat6.webp" id="boat">
+    <img src="mountains7.webp" id="m7">
+</section>
+<div class="parag">
+
+    <h1 class="mycv">My cv</h1> 
+    <h2 class="who">Who am I?</h2>
+    <p> I am Khaled Frayji,20 years old,student at lebanese university</p>
+<h2 class="language">Languages:</h2> 
+<p> Arabic,English,French</p>
+<h2 class="rr">Hobbies:</h2>
+<p>Football,gym,coding..</p>
+</div>
+<script>
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains3 = document.getElementById('m3');
+    let mountains4 = document.getElementById('m4');
+    let river5 = document.getElementById('riv');
+    let boat6 = document.getElementById('boat');
+    let Welcome = document.querySelector('.khaled');
+    window.onscroll = function(){
+        let value = scrollY;
+        stars.style.left = value + 'px';
+        moon.style.top = value *3 + 'px';
+        mountains3.style.top = value * 1.7 + 'px';
+        mountains4.style.top = value * 1.5 + 'px';
+        river5.style.top = value  + 'px';
+        boat6.style.top = value  + 'px';
+        boat6.style.left = value * 3  + 'px';
+        Welcome.style.fontSize = value + 'px';
+        if(scrollY >= 63){
+             Welcome.style.fontSize = 63 + 'px';
+        Welcome.style.position = 'fixed'; 
+        if(scrollY>= 417){
+            Welcome.style.display = 'none';
+        }else{
+            Welcome.style.display = 'block';
+        }
+
+        }
+        if(scrollY >= 150){
+            document.querySelector('.main').style.background = 'rgb(39 131 139)';
+        }
+        else{
+            document.querySelector('.main').style.background = 'rgb(11, 5, 15';
+
+        }
+
+
+
+    }
+
+
+
+</script>
+
+</body>
+</html>
